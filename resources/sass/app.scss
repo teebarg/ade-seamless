@@ -1,0 +1,291 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i&display=swap");
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+    --color1: #e63946ff;
+    --color2: #f1faeeff;
+    --color3: #a8dadcff;
+    --color4: #457b9dff;
+    --color5: #1d3557ff;
+    --white: #ffffff;
+    --linear-top-bottom: linear-gradient(180deg, var(--color1), var(--color5));
+    --linear-bottom-top: linear-gradient(360deg, var(--color1), var(--color5));
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color1) var(--color2);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--color2);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color1);
+    border-radius: 20px;
+    border: 3px solid var(--color2);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    //color: #c1b7c2;
+    color: #4e4b4a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10rem;
+    line-height: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+.elevate {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.main {
+    height: 100%;
+    background-color: #f0f0f3;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.main > .header {
+    background-color: #ffffff;
+}
+
+.main > .content {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    height: 0;
+}
+
+.main > .content > .sidebar {
+    //background: blue;
+    margin-right: 20px;
+}
+
+.main > .content > .dynamic {
+    flex: 1;
+    overflow: auto;
+}
+
+.hasError {
+    border: 1px solid red;
+}
+
+.nav-item {
+    padding: 15px 0;
+    font-weight: 600;
+}
+
+.nav-item.active {
+    border-bottom: 3px solid $color5;
+}
+
+.sidebar__container {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px 20px;
+    width: 20vw;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__container:after {
+    content: "add employee";
+    padding: 0 30px;
+    background: $color4;
+    position: absolute;
+    height: 50px;
+    width: fit-content;
+    align-self: center;
+    bottom: -25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    color: #f0f0f3;
+}
+
+.lit {
+    padding: 5px;
+}
+
+.lit img {
+    margin-right: 10px;
+}
+
+ul li{
+    padding: 2px 5px;
+}
+
+.selected-list {
+    background: $color2;
+    border-radius: 5px;
+    color: #f0f0f3;
+}
+
+.c-avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 14.4px;
+    border-radius: 50em;
+    margin-right: 10px;
+}
+
+.c-avatar-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50em;
+}
+
+.c-avatar .c-avatar-status {
+    width: 10px;
+    height: 10px;
+}
+
+.c-avatar-status {
+    position: absolute;
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 50em;
+    top: 0;
+    height: 7px;
+    width: 7px;
+    left: -2px;
+    background-color: $color5;
+}
+
+.icon {
+    font-size: 20px;
+    align-self: center;
+}
+
+.br {
+    border-radius: 25px;
+    background-color: $color5 !important;
+    border-color: $color5 !important;
+}
+
+.br:hover {
+    background-color: darken($color5, 10) !important;
+}
+
+.profile_sec .icon {
+    color: $color2;
+}
+
+.alt-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-size: 2.125rem;
+    align-items: center;
+    display: flex;
+}
