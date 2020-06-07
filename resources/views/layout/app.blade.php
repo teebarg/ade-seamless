@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@yield('title')</title>
-        <meta name="description" content="@yield('meta_description', 'Laravel Boilerplate')">
+        <title>A Simple App</title>
+        <meta name="description" content="A Simple Employee App">
         <script src="https://kit.fontawesome.com/b3f3b5efe7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
 
     <body>
-        <div id="app" class="" style="background: #f0f0f3; height: 100vh; padding: 30px 30px 60px; ">
+        <div id="app" class="" style="background: #f0f0f3; height: 100vh; padding: 30px 30px 70px; ">
             <div class="main elevate">
                 <div class="header">@include('partial.header')</div>
                 <div class="content">

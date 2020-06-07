@@ -12,7 +12,7 @@
             </div>
         </div>
         <div>
-            <div class="font-weight-bold">{{this.employee.salary}} NOK <span style="border-radius: 25px" class="badge" :class="[this.employee.raise > 0 ? 'badge-success' : 'badge-danger' ]">
+            <div class="font-weight-bold">{{this.employee.salary}} NOK <span v-if="this.employee.raise != 0" style="border-radius: 25px" class="badge" :class="[this.employee.raise > 0 ? 'badge-success' : 'badge-danger' ]">
                 {{this.employee.raise > 0 ? '+' : ''}}{{this.employee.raise}}</span>
             </div>
             <div class="small text-muted">{{this.employee.employee_status}}</div>

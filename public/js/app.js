@@ -1963,9 +1963,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditEmployee",
   props: ['employee'],
-  data: function data() {
-    return {};
-  },
   components: {
     EmployeeForm: _EmployeeForm__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -2075,7 +2072,6 @@ __webpack_require__.r(__webpack_exports__);
         employee_status: this.employee && this.employee.employee_status || 'part time',
         employment_date: this.employee && this.employee.employment_date || ''
       },
-      type1: this.type,
       title: ['Product Manager', 'Tester', 'Business Analyst', 'Software Engineer'],
       status: ['test period', 'worker'],
       employee_status: ['full time', 'part time']
@@ -2096,7 +2092,8 @@ __webpack_require__.r(__webpack_exports__);
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
       },
       salary: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+        numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["numeric"]
       },
       title: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
@@ -2108,6 +2105,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
+      var _this = this;
+
+      Object.keys(this.form).forEach(function (key) {
+        return _this.form[key] === '' && delete _this.form[key];
+      });
       this.$v.form.$touch();
       if (this.$v.form.$error) return;
 
@@ -2186,6 +2188,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     window.axios.get('/api/employees').then(function (_ref) {
       var data = _ref.data.data;
       _this.employees = data;
+    })["catch"](function (err) {
+      sweetalert__WEBPACK_IMPORTED_MODULE_2___default()("An Error Occured!", "Please Contact Adminstrator", "error");
     });
   },
   methods: {
@@ -60967,21 +60971,25 @@ var render = function() {
     _c("div", [
       _c("div", { staticClass: "font-weight-bold" }, [
         _vm._v(_vm._s(this.employee.salary) + " NOK "),
-        _c(
-          "span",
-          {
-            staticClass: "badge",
-            class: [this.employee.raise > 0 ? "badge-success" : "badge-danger"],
-            staticStyle: { "border-radius": "25px" }
-          },
-          [
-            _vm._v(
-              "\n            " +
-                _vm._s(this.employee.raise > 0 ? "+" : "") +
-                _vm._s(this.employee.raise)
+        this.employee.raise != 0
+          ? _c(
+              "span",
+              {
+                staticClass: "badge",
+                class: [
+                  this.employee.raise > 0 ? "badge-success" : "badge-danger"
+                ],
+                staticStyle: { "border-radius": "25px" }
+              },
+              [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(this.employee.raise > 0 ? "+" : "") +
+                    _vm._s(this.employee.raise)
+                )
+              ]
             )
-          ]
-        )
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "small text-muted" }, [

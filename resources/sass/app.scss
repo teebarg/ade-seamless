@@ -7,48 +7,26 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-:root {
-    --color1: #e63946ff;
-    --color2: #f1faeeff;
-    --color3: #a8dadcff;
-    --color4: #457b9dff;
-    --color5: #1d3557ff;
-    --white: #ffffff;
-    --linear-top-bottom: linear-gradient(180deg, var(--color1), var(--color5));
-    --linear-bottom-top: linear-gradient(360deg, var(--color1), var(--color5));
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
 /* The emerging W3C standard
    that is currently Firefox-only */
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color1) var(--color2);
+    scrollbar-color: $color2;
 }
 
 /* Works on Chrome/Edge/Safari */
 *::-webkit-scrollbar {
-    width: 12px;
+    width: 2px;
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--color2);
+    background: $color2;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--color1);
+    background-color: $color2;
     border-radius: 20px;
-    border: 3px solid var(--color2);
+    border: 3px solid $color2;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -69,9 +47,6 @@ body {
     margin: 0;
     line-height: 1.2;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
-    //color: #c1b7c2;
-    color: #4e4b4a;
 }
 
 h1,
@@ -96,12 +71,6 @@ ul {
     margin: 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 10rem;
-    line-height: 1;
-}
-
 input:focus,
 textarea:focus,
 select:focus,
@@ -118,19 +87,9 @@ button:focus {
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 img {
     vertical-align: middle;
     border-style: none;
-}
-
-.bold {
-    font-weight: 600;
 }
 
 .main {
@@ -154,7 +113,6 @@ img {
 }
 
 .main > .content > .sidebar {
-    //background: blue;
     margin-right: 20px;
 }
 

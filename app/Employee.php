@@ -20,6 +20,6 @@ class Employee extends Model
         'status' => 'required|in:test period,worker',
         'salary' => 'required|numeric',
         'employment_date' => 'required|date',
-        'raise' => 'sometimes|required|numeric',
+        'raise' => 'sometimes|numeric',
     ];
 }

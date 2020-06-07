@@ -28,9 +28,13 @@
             }
         },
         mounted() {
-            window.axios.get('/api/employees').then(({data: {data}}) =>{
-                this.employees = data;
-            })
+            window.axios.get('/api/employees')
+                .then(({data: {data}}) =>{
+                    this.employees = data;
+                })
+                .catch( err => {
+                    swal("An Error Occured!", "Please Contact Adminstrator" ,"error");
+                })
         },
         methods: {
             del(e){

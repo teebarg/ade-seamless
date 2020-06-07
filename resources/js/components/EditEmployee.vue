@@ -12,10 +12,6 @@
     export default {
         name: "EditEmployee",
         props: ['employee'],
-        data() {
-            return {
-            };
-        },
         components: {
             EmployeeForm
         }

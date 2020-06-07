@@ -71,7 +71,7 @@
 </template>
 
 <script>
-    import { required } from "vuelidate/lib/validators";
+    import { required, numeric } from "vuelidate/lib/validators";
     import swal from 'sweetalert';
 
     export default {
@@ -89,7 +89,6 @@
                     employee_status: this.employee && this.employee.employee_status || 'part time',
                     employment_date: this.employee && this.employee.employment_date || ''
                 },
-                type1: this.type,
                 title: ['Product Manager', 'Tester', 'Business Analyst', 'Software Engineer'],
                 status: ['test period', 'worker'],
                 employee_status: ['full time', 'part time']
@@ -101,13 +100,14 @@
                 lname: { required },
                 employment_date: { required },
                 status: { required },
-                salary: { required },
+                salary: { required, numeric },
                 title: { required },
                 employee_status: { required }
             }
         },
         methods: {
             submit() {
+                Object.keys(this.form).forEach(key => this.form[key] === '' && delete this.form[key])
                 this.$v.form.$touch();
                 if(this.$v.form.$error) return;
                 if(this.type === 'edit'){
