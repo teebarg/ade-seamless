@@ -10,10 +10,6 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "dependencies": {
-        "@coreui/coreui": "^3.0.0",
-        "@coreui/icons": "^1.0.1",
-        "@coreui/utils": "^1.2.4",
-        "@coreui/vue": "^3.0.6",
         "moment": "^2.26.0",
         "sweetalert": "^2.1.2",
         "vuelidate": "^0.7.5"
