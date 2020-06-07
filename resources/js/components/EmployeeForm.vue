@@ -71,7 +71,7 @@
 </template>
 
 <script>
-    import { required, numeric } from "vuelidate/lib/validators";
+    import { required, decimal } from "vuelidate/lib/validators";
     import swal from 'sweetalert';
 
     export default {
@@ -100,7 +100,7 @@
                 lname: { required },
                 employment_date: { required },
                 status: { required },
-                salary: { required, numeric },
+                salary: { required, decimal },
                 title: { required },
                 employee_status: { required }
             }

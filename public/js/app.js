@@ -2093,7 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       salary: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
-        numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["numeric"]
+        decimal: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["decimal"]
       },
       title: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
